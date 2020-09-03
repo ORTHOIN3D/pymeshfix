@@ -44,18 +44,17 @@ From source at `GitHub <https://github.com/pyvista/pymeshfix>`__
     pip install .
 
 
-Dependencies
-------------
-Requires ``numpy`` and ``pyvista``
+Optional Dependencies
+---------------------
+Normally, ``pymeshfix`` just requires ``numpy``, but if you specify the ``plotting`` extra, you can get some of the more advanced plotting features.
 
-If you can't or don't want to install vtk, you can install it without
+If you 
+
 ``pyvista`` with:
 
 .. code:: bash
 
-    pip install pymeshfix --no-dependencies
-
-You'll miss out on some of the cool features from ``pyvista``, but it will still function.
+    pip install pymeshfix[plotting]
 
 
 Examples

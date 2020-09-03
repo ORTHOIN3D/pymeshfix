@@ -1,7 +1,5 @@
-"""Python module to interface with wrapped meshfix
-"""
+"""Python module to interface with wrapped meshfix"""
 import ctypes
-import warnings
 import numpy as np
 
 from pymeshfix import _meshfix
@@ -23,6 +21,10 @@ class MeshFix(object):
         Either a pyvista surface mesh :class:`pyvista.PolyData` or a (n x 3)
         vertex array and (n x 3) face array (indices of the triangles).
 
+    Examples
+    --------
+
+
     """
 
     def __init__(self, *args):
@@ -43,8 +45,14 @@ class MeshFix(object):
                 self.f = np.ascontiguousarray(faces.reshape(-1, 4)[:, 1:])
 
         else:
-            raise Exception('Invalid input.  Please load a surface mesh or' +
-                            ' face and vertex arrays')
+            if not PV_INSTALLED:
+                raise TypeError('Invalid input.  Please load a surface mesh or '
+                                'face and vertex arrays.  Install ``pyvista`` to '
+                                'repair meshes generated with ``vtk`` or '
+                                '``pyvista``.')
+            else:
+                raise TypeError('Invalid input.  Please load a surface mesh or' +
+                                ' face and vertex arrays')
 
     def load_arrays(self, v, f):
         """Loads triangular mesh from vertex and face numpy arrays.

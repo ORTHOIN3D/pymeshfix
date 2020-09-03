@@ -138,7 +138,9 @@ setup(
     keywords='meshfix',
     package_data={'pymeshfix/examples': ['StanfordBunny.ply',
                                          'planar_mesh.ply']},
-    install_requires=['numpy>1.11.0',
-                      'pyvista>=0.23.0'],
+    install_requires=['numpy>1.11.0'],
+    extras_require={
+        'plotting': ['pyvista>=0.23.0']
+        },
     setup_requires=setup_requires,
 )

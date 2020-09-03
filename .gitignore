@@ -31,3 +31,4 @@ docs/examples
 # coverage reports
 htmlcov/
 .coverage
+flycheck*

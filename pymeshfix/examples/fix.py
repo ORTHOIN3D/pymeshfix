@@ -1,4 +1,4 @@
-""" Demonstrates mesh repair on the standford bunny mesh """
+""" Demonstrates mesh repair on the Stanford bunny mesh """
 import time
 import os
 
